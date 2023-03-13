@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class MenuApp {
 
   static Scanner s = new Scanner(System.in);
+  static int addingIndex = 0;
 
   public static void main() {
 
@@ -20,30 +21,50 @@ public class MenuApp {
       } else if (decision == 1) {
           showTeam(team);
       } else if (decision == 2) {
-          // showTeamMember(team);
+          showTeamMember(team);
       } else if (decision == 3) {
-          // addTeamMember(team);
+          addTeamMember(team);
       } else if (decision == 4) {
-          // deleteTeamMember(team);
+          deleteTeamMember(team);
       } else {
-          // deleteAllTeamMembers(team);
-      }
-
+          deleteAllTeamMembers(team);
       }
 
     }
 
-  // private static void deleteAllTeamMembers(String[] team) {
-  // }
+  }
 
-  // private static void deleteTeamMember(String[] team) {
-  // }
+  private static void deleteAllTeamMembers(String[] team) {
+    for (int i = 0; i < team.length; i++) {
+      team[i] = null;
+    }
+  }
 
-  // private static void addTeamMember(String[] team) {
-  // }
+  private static void deleteTeamMember(String[] team) {
+    System.out.print("Which team member would you like to delete?");
+    int memberToDelete = s.nextInt();
+    if ( isValid(memberToDelete)) {
+      team[memberToDelete] = null;
+    }
+  }
 
-  // private static void showTeamMember(String[] team) {
-  // }
+  private static void addTeamMember(String[] team) {
+    System.out.print("Enter new member name: ");
+    String newMember = s.next();
+
+    if (isValid(addingIndex)) {
+     team[addingIndex++] = newMember;
+    }
+  }
+
+  private static void showTeamMember(String[] team) {
+    System.out.print("Which team member would you like to see? ");
+    int teamNumber = s.nextInt();
+
+    if (isValid(teamNumber)) {
+      System.out.println(teamNumber + ": " + team);
+    }
+  }
 
   private static void showTeam(String[] team) {
     System.out.println("Team:");
@@ -52,8 +73,15 @@ public class MenuApp {
     }
   }
 
+  public static boolean isValid(int input) {
+    if (input >= 0 && input < 5) {
+      return true;
+    } else {
+      System.out.println("Invalid entry");
+      return false;
+    }
+  }
   
-
   public static void showMenu() {
     System.out.println("Please pick an option or enter -1 to exit");
     System.out.println("1) Show Team");
