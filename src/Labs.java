@@ -10,48 +10,75 @@ public class Labs {
 
 	public static void main(String[] args) {
 			
+
+
 		//
 		// Arrays:
 		//
 		
 		// 1. Create an array with the following values 1, 5, 2, 8, 13, 6
-            
+
+
+      int[] ages = {1, 5, 2, 8, 13, 6};
+			
 		
 		// 2. Print out the first element in the array
-	
+			System.out.println(ages[0]);
 		
 		// 3. Print out the last element in the array without using the number 5
-		
+			System.out.println(ages[ages.length-1]);
 		
 		// 4. Print out the element in the array at position 6, what happens?
-
+			// System.out.println(ages[6]); //Throws exception
 		
 		// 5. Print out the element in the array at position -1, what happens?
-
+			// System.out.println(ages[-1]); //Throws exception
 			
 		// 6. Write a traditional for loop that prints out each element in the array
-	
+			for (int i = 0; i < ages.length; i++) {
+					System.out.println(ages[i]);
+			}
 			
 		// 7. Write an enhanced for loop that prints out each element in the array
-
+			for (int i : ages) {
+				System.out.println(i);
+			}
 		
-		// 8. Create a new variable called sum, write a loop that adds 
-		//			each element in the array to the sum
+		// 8. Create a new variable called sum, write a loop that adds each element in the array to the sum
+			int sum = 0;
 
+			for (int i : ages) {
+				sum += i;
+			}
+
+			System.out.println(sum);
 			
 		// 9. Create a new variable called average and assign the average value of the array to it
 
+			int average = sum / ages.length;
+			System.out.println(average);
 		
-		// 10. Write an enhanced for loop that prints out each number in the array 
-		//			only if the number is odd
+		// 10. Write an enhanced for loop that prints out each number in the array only if the number is odd
 
+		for (int i : ages) {
+			if (i % 2 != 0) {
+				System.out.println(i);				
+			}
+		}
 		
 		// 11. Create an array that contains the values "Sam", "Sally", "Thomas", and "Robert"
+
+		String[] names = {"Sam", "Sally", "Thomas", "Robert"};
 
 		
 		// 12. Calculate the sum of all the letters in the new array
 
-		
+		int sum2 = 0;
+
+		for (String name : names) {
+			sum2 += name.length();
+			System.out.println(sum2);
+		}
 
 		//
 		// Methods:
