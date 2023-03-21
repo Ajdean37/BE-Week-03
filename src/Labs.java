@@ -71,7 +71,7 @@ public class Labs {
 		String[] names = {"Sam", "Sally", "Thomas", "Robert"};
 
 		
-		// 12. Calculate the sum of all the letters in the new array
+		// 12. Calculate the /*  */sum of all the letters in the new array
 
 		int sum2 = 0;
 
@@ -79,6 +79,7 @@ public class Labs {
 			sum2 += name.length();
 			System.out.println(sum2);
 		}
+
 
 		//
 		// Methods:
