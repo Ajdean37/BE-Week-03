@@ -85,49 +85,44 @@ public class Labs {
 		// Methods:
 		//
 		
-		// 13. Write and test a method that takes a String name and prints out a greeting. 
-		//			This method returns nothing.
+		// 13. Write and test a method that takes a String name and prints out a greeting. This method returns nothing.
+				greet("Amanda");
+				greet("Dan");
 		
-		
-		// 14. Write and test a method that takes a String name and  
-		//			returns a greeting.  Do not print in the method.
-
+		// 14. Write and test a method that takes a String name and returns a greeting.  Do not print in the method.
+			System.out.println(greeting("Kaiden"));
+			System.out.println(greeting("Kensie"));
 		
 		// Compare method 13 and method 14:  
-		//		a. Analyze the difference between these two methods.
+		//		a. Analyze the difference between these two methods?
 		//		b. What do you find? 
 		//		c. How are they different?
+			// 13 is void doesnt return anything it just does something. where 14 just returns something
 		
+		// 15. Write and test a method that takes a String and an int and returns true if the number of letters in the string is greater than the int
+		System.out.println(stringVsNumber("Hello", 3));
 		
-		// 15. Write and test a method that takes a String and an int and 
-		//			returns true if the number of letters in the string is greater than the int
+		// 16. Write and test a method that takes an array of string and a string and returns true if the string passed in exists in the array
+		System.out.println(containString(names, "Sam"));
 		
+		// 17. Write and test a method that takes an array of int and returns the smallest number in the array
+		System.out.println(smallestNumber(ages)); 
 		
-		// 16. Write and test a method that takes an array of string and a string and 
-		//			returns true if the string passed in exists in the array
-		
-		
-		// 17. Write and test a method that takes an array of int and 
-		//			returns the smallest number in the array
-	
-		
-		// 18. Write and test a method that takes an array of double and 
-		//			returns the average
-		
+		// 18. Write and test a method that takes an array of double and returns the average
+		double[] doubles = {37.4, 28.9, 98.2, 67.4};
+		System.out.println(avg(doubles));
 
-		// 19. Write and test a method that takes an array of Strings and 
-		//			returns an array of int where each element
-		//			matches the length of the string at that position
-
+		// 19. Write and test a method that takes an array of Strings and returns an array of int where each element matches the length of the string at that position
+		int[] nameLengths = test(names);
+		for (int number : nameLengths) {
+			System.out.println(number);
+		}
 				
-		// 20. Write and test a method that takes an array of strings and 
-		//			returns true if the sum of letters for all strings with an even amount of letters
-		//			is greater than the sum of those with an odd amount of letters.
-
+		// 20. Write and test a method that takes an array of strings and returns true if the sum of letters for all strings with an even amount of letters is greater than the sum of those with an odd amount of letters.
+		System.out.println(sumOfLetters(names));
 	
-		// 21. Write and test a method that takes a string and 
-		//			returns true if the string is a palindrome
-
+		// 21. Write and test a method that takes a string and returns true if the string is a palindrome
+		System.out.println(pallindrome("mom"));
 		
 		
 	}
@@ -135,30 +130,85 @@ public class Labs {
 
 	
 	// Method 13:
-
+	public static void greet(String name) {
+		System.out.println("Hello " + name);
+	}
 
 	// Method 14:
-
+	public static String greeting(String name) {
+		return "Hey " + name;
+	}
 	
 	// Method 15:
-
+	public static boolean stringVsNumber(String string, int number) {
+		if (string.length() > number ) {
+			return true;
+		}
+		return false;
+	}
 	
 	// Method 16:
-
+		public static boolean containString(String[] array, String string) {
+			for (String str : array) {
+				if (str.equals(string)) {
+				return true;
+			}
+		}
+			return false;
+		}
 	
 	// Method 17:
-
+		public static int smallestNumber(int[] ages) {
+			int smallest = ages[0];
+			for (int age : ages) {
+				if (age < smallest) {
+					smallest = age;
+				}
+			}
+			return smallest;
+		}
 	
 	// Method 18:
-
+		public static double avg(double[] array) {
+			double sum = 0;
+			for (double age : array) {
+				sum += age;
+			}
+			return sum / array.length;
+		}
 	
 	// Method 19:
-
+		public static int[] test(String[] strings) {
+			int[] results = new int[strings.length];
+			for (int i = 0; i < strings.length; i++) {
+				results[i] = strings[i].length();
+			}
+			return results;
+		}
 	
 	// Method 20:
-	
+		public static boolean sumOfLetters(String[] array) {
+			int evenLetters = 0;
+			int oddLetters = 0;
+
+			for (String string : array) {
+				if (string.length() % 2 == 0) {
+					evenLetters += string.length();
+				} else {
+					oddLetters += string.length();
+				}
+			}
+			return evenLetters > oddLetters;
+		}
 	
 	// Method 21:
-	
+		public static boolean pallindrome(String string) {
+			for (int i = 0; i < string.length() / 2; i++) {
+				if (string.charAt(i) != string.charAt(string.length() - i - 1)) {
+					return false;
+				}
+			}
+			return true;
+		}
 
 }
