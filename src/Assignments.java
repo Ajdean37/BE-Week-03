@@ -45,14 +45,15 @@ public class Assignments {
 
 // A: Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console.
 
-    // int nameSum = 0;
-    // int nameAvg = 0;
+    int nameSum = 0;
+    int nameAvg = 0;
 
-    // for (int i = 0; i < names.length; i++) {
-      
-    // }
+    for (String name : names) {
+      nameSum +=  name.length();
+      nameAvg = nameSum / names.length;
+    }
 
-
+    System.out.println(nameAvg);
 // B: Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console.
 
 String allNames = "";
@@ -76,7 +77,7 @@ for (String name : names) {
   // int[] nameLengths = new int[names.length];
 
   // for (int i = 0; i < names.length; i++) {
-    
+  //   nameLengths[] += names[i];
   // }
 
 //6: Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
@@ -85,15 +86,114 @@ for (String name : names) {
       
     // }
 
+// Method 7:
+      System.out.println(name("Hello", 3));
+// Method 8:
+      String fullName = names("Amanda", "Deam");
+      System.out.println(fullName);
+//Method 9:
+      int[] array = {88, 5, 46};
+      System.out.println(arraySum(array));
+//Method 10:
+      double[] cost = {26.7, 45.2, 12.54};
+      System.out.println(avgArray(cost));
+//Method 11:
+      double[] a = {11, 12, 11};
+      double[] b = {11, 12, 13};
+      System.out.println(greaterThan(a, b));
+
+//Method 12:
+      System.out.println(willBuyDrink(true, 8.79));
+
+//Method 13:
+      System.out.println(games(false, true));
+
+  }
+
+
+
+//7: Write a method that takes a String, word, and an int, n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in “Hello” and 3, I expect the method to return “HelloHelloHello”).
+
+public static String name(String word, int n) {
+  String result = "";
+  
+  for (int i = 0; i < n; i++) {
+    result += word;
+  }
+  return result;
+}
+
+//8: Write a method that takes two Strings, firstName and lastName, and returns a full name (the full name should be the first and the last name as a String separated by a space).
+
+public static String names(String firstName, String lastName) {
+  return firstName + " " + lastName;
+}
+
+//9: Write a method that takes an array of int and returns true if the sum of all the ints in the array is greater than 100.
+
+public static boolean arraySum(int[] array) {
+
+  int sum = 0;
+  for (int i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  if (sum > 100) {
+    return true;
+  }
+  return false;
+}
+
+//10: Write a method that takes an array of double and returns the average of all the elements in the array.
+
+public static double avgArray(double[] cost) {
+  
+  int sum = 0;
+  int avg = 0;
+
+  for (int i = 0; i < cost.length; i++) {
+    sum += cost[i];
+  }
+  avg = sum / cost.length;
+  return avg;
+}
+
+//11: Write a method that takes two arrays of double and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+
+public static boolean greaterThan(double[] a, double[] b) {
+
+  int sumA = 0;
+  for (int i = 0; i < a.length; i++) {
+    sumA += a[i];
+  }
+  
+  int sumB = 0;
+  for (int j = 0; j < b.length; j++) {
+    sumB += b[j];
+  }
+
+  if (sumA > sumB) {
+    return true;
+  }
+  return false;
+}
+//12: Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+
+public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+  if (isHotOutside == true && moneyInPocket > 10.50) {
+    return true;
+  }
+  return false;
+}
+
+//13: Create a method of your own that solves a problem. In comments, write what the method does and why you created it.
+
+public static String games(boolean homework, boolean chores) {
+  if ( homework == true && chores == true) {
+    return "You can play games";
+  } else {
+    return "You need to do homework and chores before games";
   }
 }
-/* 
 
-7: Write a method that takes a String, word, and an int, n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in “Hello” and 3, I expect the method to return “HelloHelloHello”).
-8: Write a method that takes two Strings, firstName and lastName, and returns a full name (the full name should be the first and the last name as a String separated by a space).
-9: Write a method that takes an array of int and returns true if the sum of all the ints in the array is greater than 100.
-10: Write a method that takes an array of double and returns the average of all the elements in the array.
-11: Write a method that takes two arrays of double and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
-12: Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
-13: Create a method of your own that solves a problem. In comments, write what the method does and why you created it.
- */
+// if my kids homework is done and they did their chores they can play games.
+}
