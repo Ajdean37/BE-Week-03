@@ -71,7 +71,7 @@ public class Labs {
 		String[] names = {"Sam", "Sally", "Thomas", "Robert"};
 
 		
-		// 12. Calculate the /*  */sum of all the letters in the new array
+		// 12. Calculate the sum of all the letters in the new array
 
 		int sum2 = 0;
 

@@ -20,7 +20,7 @@ public class Assignments {
 
 // B: Add a new age to your array and repeat the step above to ensure it is dynamic (works for arrays of different lengths).
 
-    int[] newAges = new int[ages.length + 1];;
+    int[] newAges = new int[ages.length + 1];
     System.arraycopy(ages, 0, newAges, 0, ages.length);
     newAges[newAges.length - 1] = 7;
     System.out.println(newAges[newAges.length-1]);
