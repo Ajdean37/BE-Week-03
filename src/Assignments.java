@@ -74,17 +74,21 @@ for (String name : names) {
 
 //5: Create a new array of int called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
 
-  // int[] nameLengths = new int[names.length];
+  int[] nameLengths = new int[names.length];
 
-  // for (int i = 0; i < names.length; i++) {
-  //   nameLengths[] += names[i];
-  // }
+  for (int i = 0; i < names.length; i++) {
+    namesLength += i;
+  }
+
+  System.out.println(namesLength);
 
 //6: Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. Print the result to the console.
+  int namesAvg = 0
+    for (int i = 0; i < nameLengths.length; i++) {
+      namesAvg += i;
+    }
 
-    // for (int i = 0; i < names.length; i++) {
-      
-    // }
+    System.out.println(namesAvg);
 
 // Method 7:
       System.out.println(name("Hello", 3));
